@@ -1,0 +1,100 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: Gotham Rounded, sans-serif;
+  font-weight: normal;
+}
+
+:root {
+  --gradient1 : linear-gradient(to right, #1078ab, #f6cd7e);
+  --gradient2 : linear-gradient(109.6deg,  rgba(245,56,56,1) 11.2%, rgba(234,192,117,1) 78% );
+}
+
+
+
+.title h1 {
+  padding :0%;
+  margin: 0;
+  border: 1px solid transparent;
+  color: transparent;
+  font-family: 'Lilita One', cursive;
+  font-weight: bolder;
+  font-size: 5rem;
+  background-color: #aeaeae;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background: var(--gradient2) ;
+  background-size: 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow( 3px 3px 3px black);
+  animation: animasibg infinite alternate 5s;
+
+}
+
+body {
+  padding: 0;
+  margin:auto;
+  background: var(--gradient1);
+  background-size: 200%;
+  background-position: left;
+  animation:  animasibg infinite alternate 25s;
+
+} 
+
+@keyframes animasibg {
+  from {
+    background-position: left;
+  }
+
+  to {
+    background-position: right;
+  }
+}
+
+.calculator-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-grid > button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid white;
+  outline: none;
+  background-color: #f9e5b3;
+}
+
+.calculator-grid > button:hover {
+  background-color: antiquewhite;
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.output {
+  grid-column: 1 / -1;
+  background-color: #f9e5b33a;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.output .previous-operand {
+  color: rgba(255, 255, 255, .75);
+  font-size: 1.5rem;
+}
+
+.output .current-operand {
+  color: white;
+  font-size: 2.5rem;
+}
