@@ -1,100 +1,120 @@
-*, *::before, *::after {
-  box-sizing: border-box;
-  font-family: Gotham Rounded, sans-serif;
-  font-weight: normal;
-}
-
-:root {
-  --gradient1 : linear-gradient(to right, #1078ab, #f6cd7e);
-  --gradient2 : linear-gradient(109.6deg,  rgba(245,56,56,1) 11.2%, rgba(234,192,117,1) 78% );
-}
-
-
-
-.title h1 {
-  padding :0%;
-  margin: 0;
-  border: 1px solid transparent;
-  color: transparent;
-  font-family: 'Lilita One', cursive;
-  font-weight: bolder;
-  font-size: 5rem;
-  background-color: #aeaeae;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  background: var(--gradient2) ;
-  background-size: 300%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  filter: drop-shadow( 3px 3px 3px black);
-  animation: animasibg infinite alternate 5s;
-
-}
-
 body {
-  padding: 0;
-  margin:auto;
-  background: var(--gradient1);
-  background-size: 200%;
-  background-position: left;
-  animation:  animasibg infinite alternate 25s;
-
-} 
-
-@keyframes animasibg {
-  from {
-    background-position: left;
-  }
-
-  to {
-    background-position: right;
-  }
+    min-height: 100vh;
+    font-size: 2.5vh;
+    top: 15%;
+    left: 40%;
+    margin: 0 auto;
+    background-color: #eaeaea;
+    background-image: var(--gradient1);
+    font-family: 'Staatliches', cursive;
+    background-size: 200%;
+    animation: gradient-animation 5s infinite alternate;
+}
+:root {
+    --gradient1 : linear-gradient(90deg, rgba(134,189,162,1) 15%, rgba(237,223,179,1) 94%);
+    --gradient2 : linear-gradient(to right, black, rgb(97, 97, 97) );
 }
 
-.calculator-grid {
-  display: grid;
-  justify-content: center;
-  align-content: center;
-  min-height: 100vh;
-  grid-template-columns: repeat(4, 100px);
-  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+@keyframes gradient-animation{
+    0% {
+        background-position: left;
+    }
+
+    100%{
+        background-position: right;
+    }
+
 }
 
-.calculator-grid > button {
-  cursor: pointer;
-  font-size: 2rem;
-  border: 1px solid white;
-  outline: none;
-  background-color: #f9e5b3;
+h1 {
+    color: white;
+    font-weight: lighter;
+    text-align: center;
+    margin: 0;
 }
 
-.calculator-grid > button:hover {
-  background-color: antiquewhite;
+#calculator {
+    background-color: #eaeaea;
+    background-image: var(--gradient2);
+    background-size: 200%;
+    animation: gradient-animation 5s infinite alternate;
+    width: auto;
+    height: auto;
+    padding: 1.5vh;
+    border: 5px solid #CA955C;
+    border-radius: 15px;
+    margin: 0;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
-.span-two {
-  grid-column: span 2;
+.box {
+    font-family: 'Staatliches', cursive;
+    text-align:right;
+    font-size: 2.8vh;
+    height: 3vh;
+    line-height: 3vh;
+    padding: 1em;
+    border: 2px solid #CA955C;
+    color: white;
+    border-radius: 15px;
+    background-color: transparent;
 }
 
-.output {
-  grid-column: 1 / -1;
-  background-color: #f9e5b33a;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-around;
-  flex-direction: column;
-  padding: 10px;
-  word-wrap: break-word;
-  word-break: break-all;
+#last_operation_history {
+    font-family: 'Staatliches', cursive;
+    height: 1.8vh;
+    font-size: 1.8vh;
+    text-align:right;
+    padding-right: 1.5vh;
+    color: rgb(158, 158, 158);
+    background-color: transparent;
 }
 
-.output .previous-operand {
-  color: rgba(255, 255, 255, .75);
-  font-size: 1.5rem;
+button {
+    width:9vh;
+    height: 9vh;
+    font-weight:bold;
+    font-size: 3vh;
+    color: white;
+    background-color: #bbaf86;
+    border-radius: 50%;
+    border: 1px solid #333333;
 }
 
-.output .current-operand {
-  color: white;
-  font-size: 2.5rem;
+#backspace_btn {
+    background-image: url("../assets/back_remove.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 1.7em;
+}
+
+button:hover {
+    background-color: #9e9571;
+}
+
+.operator {
+    background-color: #876445;
+}
+
+.operator:hover {
+    background-color: #d0bf86;
+}
+
+#equal_sign {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #a69957;
+    text-align: center;
+    font-weight: auto;
 }
